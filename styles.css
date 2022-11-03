@@ -25,7 +25,7 @@ body {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 80px;
@@ -187,6 +187,7 @@ footer #btnDelete {
 }
 
 .bookBox {
+    position: relative;
     width: 90%;
     height: 90%;
     background-color: var(--white);
@@ -266,4 +267,26 @@ footer #btnDelete {
 
 .read {
     border-left: 10px solid #66ff33;
+}
+
+.bookBox .deleteBtn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    background-color: var(--orange);
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-out;
+}
+
+.bookBox .deleteBtn:hover {
+    transform: scale(1.1);
 }

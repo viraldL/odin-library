@@ -63,6 +63,7 @@ function addBookToSite() {
             const pages = document.createElement("p");
             const read = document.createElement("p");
             const readBtn = document.createElement("input");
+            const deleteBtn = document.createElement("button");
             div.classList.add("bookBox");
             div.setAttribute("data-id", `${myLibrary.length}`)
 
@@ -78,7 +79,10 @@ function addBookToSite() {
             read.classList.add("boxIsRead");
             readBtn.classList.add("isReadBtn");
             readBtn.setAttribute("type", "checkbox");
-            readBtn.setAttribute("data-id", `${myLibrary.length}`)
+            deleteBtn.classList.add("deleteBtn");
+            deleteBtn.setAttribute("data-id", `${myLibrary.length}`);
+            deleteBtn.innerHTML = "&#x2716;";
+            readBtn.setAttribute("data-id", `${myLibrary.length}`);
             if(book.read){
                 read.innerText = "Read.";
                 readBtn.checked = true;
@@ -92,8 +96,10 @@ function addBookToSite() {
             div.appendChild(pages);
             div.appendChild(read);
             div.appendChild(readBtn);
+            div.appendChild(deleteBtn);
             document.querySelector("main").appendChild(div);
             changeRead(div, readBtn, book);
+            deleteBook(div, deleteBtn, myLibrary);
         }
 
 
@@ -113,5 +119,14 @@ function changeRead(div, btn, book) {
             book.read = false;
             console.log(myLibrary);
         }
+    })
+}
+
+function deleteBook(div, btn, lib){
+    btn.addEventListener("click", () => {
+        const index = btn.getAttribute("data-id");
+        lib.splice(index-1, 1);
+        div.remove();
+        console.log(myLibrary);
     })
 }
