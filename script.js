@@ -47,10 +47,71 @@ function addBookToLibrary() {
     if(title != "" && author != "" && pages != ""){
         removePop()
         myLibrary.push(new Book(title, author, pages, read))
+        addBookToSite()
         console.log(myLibrary);
     }
 }
 
 function addBookToSite() {
+    
+    if(myLibrary.length > 0){
+        document.querySelector("main").innerHTML = "";
+        for(const book of myLibrary){
+            const div = document.createElement("div");
+            const title = document.createElement("p");
+            const author = document.createElement("p");
+            const pages = document.createElement("p");
+            const read = document.createElement("p");
+            const readBtn = document.createElement("input");
+            div.classList.add("bookBox");
+            div.setAttribute("data-id", `${myLibrary.length}`)
 
+            title.classList.add("boxTitle");
+            title.innerText = book.title;
+
+            author.classList.add("boxAuthor");
+            author.innerText = book.author;
+
+            pages.classList.add("boxPages");
+            pages.innerText = book.pages;
+
+            read.classList.add("boxIsRead");
+            readBtn.classList.add("isReadBtn");
+            readBtn.setAttribute("type", "checkbox");
+            readBtn.setAttribute("data-id", `${myLibrary.length}`)
+            if(book.read){
+                read.innerText = "Read.";
+                readBtn.checked = true;
+                div.classList.add("read");
+            } else {
+                read.innerText = "Not read yet."
+            }
+
+            div.appendChild(title);
+            div.appendChild(author);
+            div.appendChild(pages);
+            div.appendChild(read);
+            div.appendChild(readBtn);
+            document.querySelector("main").appendChild(div);
+            changeRead(div, readBtn, book);
+        }
+
+
+    } else {
+        console.log(`nothing to add`)
+    }
+}
+
+function changeRead(div, btn, book) {
+    btn.addEventListener("click", () => {
+        if(btn.checked){
+            div.classList.add("read");
+            book.read = true;
+            console.log(myLibrary);
+        } else {
+            div.classList.remove("read");
+            book.read = false;
+            console.log(myLibrary);
+        }
+    })
 }
