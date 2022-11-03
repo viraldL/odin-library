@@ -3,6 +3,7 @@ const addBtn = document.querySelector("#btnAdd");
 const addAddBtn = document.querySelector("#addAdd");
 const addBack = document.querySelector("#addBack");
 const form = document.querySelector("#form");
+const deleteAll = document.querySelector("#btnDelete");
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -24,6 +25,14 @@ function addPop() {
     popupBox.classList.add("active");
     form.reset();
 }
+
+function removeAll() {
+    myLibrary = [];
+    addBookToSite();
+    document.querySelector("main").innerHTML = "";
+}
+
+deleteAll.addEventListener("click", removeAll);
 
 
 addBtn.addEventListener("click", () => {
