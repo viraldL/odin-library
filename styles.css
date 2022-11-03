@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;600;700&display=swap');
+
+
+:root {
+    --white: #f1f2f3;
+    --dark: #2a3133;
+    --orange: #f47960;
+    --red: #f73d4e;
+    --yellow: #ffd67e;
+    --beige: #dad0a9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    color: var(--dark);
+}
+
+main {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    height: calc(100% - 160px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+footer #btnAdd {
+    width: 47%;
+    height: 60px;
+    background-color: var(--orange);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    gap: 10px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer #btnAdd:hover {
+    font-size: 1.1rem;
+}
+
+footer #btnDelete:hover {
+    font-size: 1.1rem;
+}
+
+footer #btnDelete {
+    width: 47%;
+    height: 60px;
+    background-color: var(--white);
+    border-radius: 30px;
+    border: 2px solid var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    gap: 10px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#addBookForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 250px;
+    z-index: 3;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+#addBookForm form legend {
+    position: absolute;
+    top: 10px;
+    font-weight: 700;
+}
+
+#addBookForm form button {
+    width: 47%;
+    border: none;
+    padding: 10px 20px;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+}
+
+#addBookForm form .buttonsForm {
+    width: 80%;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#addBookForm form #addBack {
+    width: 47%;
+    border: none;
+    padding: 10px 20px;
+    background-color: var(--white);
+    color: var(--dark);
+    border: 2px solid var(--dark);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#addBookForm form button:hover, button #addBack:hover {
+    padding: 10px 25px;
+}
+
+#addBookForm form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

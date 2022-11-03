@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book ex</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>My Library</h1>
+    </header>
+    <main>
+
+    </main>
+    <div class="box">
+        <div id="addBookForm">
+            <form id="form" name="form">
+                <legend>Add your book!</legend>
+                <div><span>Title: </span><input type="text" name="bookTitle" id="title" placeholder="e.g. The Hobbit" required></div>
+                <div><span>Author: </span><input type="text" name="bookAuthor" id="author" placeholder="e.g. J.R.R. Tolkien" required></div>
+                <div><span>Pages: </span><input type="number" name="bookPages" id="pages" required></div>
+                <div><span>Have you read it? </span><input type="checkbox" name="isRead" id="read"></div>
+                <div class="buttonsForm">
+                    <button type="submit" id="addAdd">Add!</button>
+                    <button type="button" id="addBack">Back</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div id="btnAdd">Add book <span>+</span></div>
+        <div id="btnDelete">Remove all books!</div>
+    </footer>
+</body>
+</html>
