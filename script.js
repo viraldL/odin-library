@@ -16,7 +16,6 @@ function Book(title, author, pages, read) {
     }
 }
 
-
 function removePop() {
     popupBox.classList.remove("active");
 }
@@ -33,16 +32,8 @@ function removeAll() {
 }
 
 deleteAll.addEventListener("click", removeAll);
-
-
-addBtn.addEventListener("click", () => {
-    addPop();
-});
-
-addBack.addEventListener("click", () => {
-    removePop();
-});
-
+addBtn.addEventListener("click", addPop);
+addBack.addEventListener("click", removePop);
 addAddBtn.addEventListener("click", (e) => {
     e.preventDefault()
     addBookToLibrary()
@@ -61,8 +52,7 @@ function addBookToLibrary() {
     }
 }
 
-function addBookToSite() {
-    
+function addBookToSite() { 
     if(myLibrary.length > 0){
         document.querySelector("main").innerHTML = "";
         for(const book of myLibrary){
