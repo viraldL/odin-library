@@ -6,13 +6,16 @@ const form = document.querySelector("#form");
 const deleteAll = document.querySelector("#btnDelete");
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read,
-    this.info = function() {
-        return `${title} by ${author}, ${pages} pages, ${read}`;
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.read = read
+    }
+
+    get info() {
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
     }
 }
 
@@ -68,6 +71,12 @@ function addBookToSite() {
 
             title.classList.add("boxTitle");
             title.innerText = book.title;
+            if(title.innerText > 13){
+                title.classList.add("boxTitleSmaller");
+            }
+            if(title.innerText > 24) {
+                title.classList.add("boxTitleSmallerSmaller");
+            }
 
             author.classList.add("boxAuthor");
             author.innerText = book.author;

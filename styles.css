@@ -214,6 +214,16 @@ footer #btnDelete {
     color: var(--dark);
 }
 
+.boxTitleSmaller {
+    font-size: 1rem !important;
+    padding: 5px 0;
+}
+
+.boxTitleSmallerSmaller {
+    font-size: 0.7rem !important;
+    padding: 10px 0;
+}
+
 .bookBox .boxTitle::after {
     content: "by";
     color: rgba(0, 0, 0, 0.2);
