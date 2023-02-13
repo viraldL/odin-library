@@ -300,3 +300,17 @@ footer #btnDelete {
 .bookBox .deleteBtn:hover {
     transform: scale(1.1);
 }
+
+input:focus:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid transparent;
+
+}
+
+input:focus:valid {
+    box-shadow: 0 0 5px 1px green;
+}

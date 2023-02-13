@@ -19,12 +19,12 @@
         <div id="addBookForm">
             <form id="form" name="form">
                 <legend>Add your book!</legend>
-                <div><span>Title: </span><input type="text" name="bookTitle" id="title" placeholder="e.g. The Hobbit" required></div>
-                <div><span>Author: </span><input type="text" name="bookAuthor" id="author" placeholder="e.g. J.R.R. Tolkien" required></div>
-                <div><span>Pages: </span><input type="number" name="bookPages" id="pages" required></div>
+                <div><span>Title: </span><input type="text" name="bookTitle" id="title" placeholder="e.g. The Hobbit" required minlength="1" maxlength="13"></div>
+                <div><span>Author: </span><input type="text" name="bookAuthor" id="author" placeholder="e.g. J.R.R. Tolkien" required minlength="1" maxlength="20"></div>
+                <div><span>Pages: </span><input type="number" name="bookPages" id="pages" required minlength="1" maxlength="5"></div>
                 <div><span>Have you read it? </span><input type="checkbox" name="isRead" id="read"></div>
                 <div class="buttonsForm">
-                    <button type="submit" id="addAdd">Add!</button>
+                    <button type="button" id="addAdd">Add!</button>
                     <button type="button" id="addBack">Back</button>
                 </div>
             </form>
